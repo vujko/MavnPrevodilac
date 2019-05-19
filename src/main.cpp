@@ -1,5 +1,5 @@
 #include "LexicalAnalysis.h"
-
+#include "SyntaxAnalysis.h"
 #include <iostream>
 #include <exception>
 
@@ -30,6 +30,21 @@ void main()
 		{
 			lex.printLexError();
 			throw runtime_error("\nException! Lexical analysis failed!\n");
+		}
+
+
+		///
+		SyntaxAnalysis syntax(lex);
+
+		retVal = syntax.Do();
+
+		if (retVal)
+		{
+			cout << "Syntax analysis finished successfully!" << endl;
+		}
+		else
+		{
+			throw runtime_error("\nException! Syntax analysis failed!\n");
 		}
 
 	}
