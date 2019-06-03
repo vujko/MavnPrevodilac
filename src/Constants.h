@@ -10,7 +10,7 @@
 /**
  * Number of states in FSM
  */
-#define NUM_STATES				45
+#define NUM_STATES				50
 
 /**
  * Number of supported characters
@@ -30,7 +30,7 @@
 /**
  * Number of regs in processor.
  */
-#define __REG_NUMBER__					4
+#define __REG_NUMBER__					5
 
 /**
  * Use these to print liveness analysis dump.

@@ -47,6 +47,11 @@ enum TokenType
 	T_COMMENT,
 	T_END_OF_FILE,
 	T_ERROR,
+
+	T_NEG,
+	T_NEGU,
+	T_LHU
+
 };
 
 
@@ -65,7 +70,10 @@ enum InstructionType
 	I_SW,
 	I_BLTZ,
 	I_B,
-	I_NOP
+	I_NOP,
+	I_NEG,
+	I_NEGU,
+	I_LHU
 };
 
 /**
@@ -77,5 +85,7 @@ enum Regs
 	t0,
 	t1,
 	t2,
-	t3
+	t3,
+	t4
 };
+

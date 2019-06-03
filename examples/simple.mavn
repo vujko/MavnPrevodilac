@@ -13,3 +13,7 @@ _func main;
 	la		r5, m2;
 	lw		r2, 0(r5);
 	add		r3, r1, r2;
+	neg		r1, r2;
+	negu		r1, r2;
+	lhu		r1, m2;
+	

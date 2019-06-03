@@ -16,19 +16,26 @@ public:
 
 	InterferenceGraph() {}
 
-	InterferenceGraph(Variables* v) : variables(v) {}
+	InterferenceGraph(Variables v, Instructions& instructions) : variables(get_reg_variables(v)) {
+		makeInterferenceGraph(instructions);
+	}
 
 	void setMatrix(InterferenceMatrix* mat) { matrix = *mat; }
 
 	void printInterferenceMatrix();
 
-	InterferenceMatrix getMatrix();
+	InterferenceMatrix getMatrix() { return matrix; }
 
-	Variables getVars();
+	Variables getVars() { return *variables; }
+	void makeInterferenceGraph(Instructions& instructions);
+
+private:
+
+	Variables * get_reg_variables(Variables& all_variables);
 
 };
 
 
-InterferenceGraph makeInterferenceGraph();
+
 
 #endif

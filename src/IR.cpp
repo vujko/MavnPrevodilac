@@ -20,6 +20,11 @@ Regs Variable::getAssignment()
 	return m_assignment;
 }
 
+int Variable::getValue()
+{
+	return m_value;
+}
+
 void Variable::set_type(VariableType var)
 {
 	m_type = var;
@@ -38,6 +43,11 @@ void Variable::set_position(int pos)
 void Variable::set_assignment(Regs ass)
 {
 	m_assignment = ass;
+}
+
+void Variable::set_value(int val)
+{
+	m_value = val;
 }
 
 void Variable::check_name()
@@ -147,12 +157,12 @@ Variables & Instruction::get_out()
 	return m_out;
 }
 
-list<Instruction*> Instruction::get_succ()
+list<Instruction*>& Instruction::get_succ()
 {
 	return m_succ;
 }
 
-list<Instruction*> Instruction::get_pred()
+list<Instruction*>& Instruction::get_pred()
 {
 	return m_pred;
 }
@@ -221,3 +231,4 @@ void Instruction::set_number(int number)
 {
 	m_number = number;
 }
+

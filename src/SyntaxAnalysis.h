@@ -61,6 +61,7 @@ private:
 	void addLabelToInstruction(Instruction* inst);
 	void check_function_name(string name);
 	int instructionPosition;
+	int regPosition;
 public:
 
 	Labels labels;
@@ -97,5 +98,8 @@ public:
 	Token getNextToken();
 
 	Variable* get_variable(Variable* temp);
+
+	void create_succ_pred();
+	void print_instructions(Instructions* instruc);
 };
 

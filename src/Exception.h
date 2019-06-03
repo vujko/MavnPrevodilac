@@ -54,3 +54,13 @@ class WrongOutputFileName : std::runtime_error
 public:
 	WrongOutputFileName() : runtime_error("\nException! Failed to open input file!\n") {}
 };
+
+class NotEnughRegisters : std::runtime_error {
+public:
+	NotEnughRegisters() : runtime_error("\nThere is not enough registers to complete the program!\n\n") {}
+};
+
+class AllocationFailed : runtime_error {
+public:
+	AllocationFailed() : runtime_error("\nException!Resource allocation failed!\n") {}
+};

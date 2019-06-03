@@ -19,20 +19,24 @@ public:
 	};
 
 	Variable() : m_type(NO_TYPE), m_name(""), m_position(-1), m_assignment(no_assign) {}
-	Variable(string name, int pos) : m_type(NO_TYPE), m_name(name), m_position(pos), m_assignment(no_assign) {}
-	Variable(string name, VariableType type) : m_type(type), m_name(name) {
+	//Variable(string name, int pos) : m_type(NO_TYPE), m_name(name), m_position(pos), m_assignment(no_assign) {}
+	Variable(string name, VariableType type) : m_type(type), m_name(name), m_position(0) , m_assignment(no_assign){
 		check_name();
 	}
+	Variable(std::string name, int pos, VariableType vt) : m_type(vt), m_name(name), m_position(pos), m_assignment(no_assign) {}
+
 
 	VariableType getType();
 	string getName();
 	int getPosition();
 	Regs getAssignment();
+	int getValue();
 
 	void set_type(VariableType);
 	void set_name(string );
 	void set_position(int);
 	void set_assignment(Regs);
+	void set_value(int);
 
 	//throw VariableExists(currentToken.getValue());
 	struct NameNotValid : std::runtime_error {
@@ -44,6 +48,7 @@ private:
 	string m_name;
 	int m_position;
 	Regs m_assignment;
+	int m_value;
 
 	void check_name();
 };
@@ -105,8 +110,8 @@ public:
 	Variables& get_in();
 	Variables& get_out();
 
-	list<Instruction*> get_succ();
-	list<Instruction*> get_pred();
+	list<Instruction*>& get_succ();
+	list<Instruction*>& get_pred();
 
 
 	void set_position(int position);
@@ -125,6 +130,8 @@ public:
 	void set_pred(list<Instruction*> pred);
 	void set_text(string text);
 	void set_number(int number);
+
+
 
 
 

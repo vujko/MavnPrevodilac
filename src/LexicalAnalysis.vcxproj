@@ -83,18 +83,27 @@
     <ClInclude Include="InterferenceGraph.h" />
     <ClInclude Include="IR.h" />
     <ClInclude Include="LexicalAnalysis.h" />
+    <ClInclude Include="LivenessAnalysis.h" />
+    <ClInclude Include="ResourceAllocation.h" />
+    <ClInclude Include="SimplificationStack.h" />
     <ClInclude Include="SyntaxAnalysis.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Types.h" />
+    <ClInclude Include="Writer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FiniteStateMachine.cpp" />
     <ClCompile Include="InteferenceGraphcpp.cpp" />
+    <ClCompile Include="InterferenceGraph.cpp" />
     <ClCompile Include="IR.cpp" />
     <ClCompile Include="LexicalAnalysis.cpp" />
+    <ClCompile Include="LivenessAnalysis.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ResourceAllocation.cpp" />
+    <ClCompile Include="SimplificationStack.cpp" />
     <ClCompile Include="SyntaxAnalysis.cpp" />
     <ClCompile Include="Token.cpp" />
+    <ClCompile Include="Writer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
